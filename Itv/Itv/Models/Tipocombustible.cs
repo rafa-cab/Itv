@@ -1,4 +1,4 @@
-namespace Itv.Vehiculo;
+namespace SistemaITV;
 
 public enum Tipocombustible
 {

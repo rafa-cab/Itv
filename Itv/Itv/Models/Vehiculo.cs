@@ -1,21 +1,17 @@
-namespace Itv.Models;
+namespace SistemaITV;
 
-public class Vehiculo<TipoCombustible>
+public class Vehiculo 
 {
-    
-        // Este es el ID interno que pide el ejercicio (no es la matrícula)
-        public long Id { get; set; }
-
-        // El formato debe ser 0000XXX
-        public string Matricula { get; set; }
-        public string Marca { get; set; }
+    public long Id { get; set; }
+    public string Matricula { get; set; }
+    public string Marca { get; set; }
         public string Modelo { get; set; }
 
         // La potencia del motor
         public int Cilindrada { get; set; }
 
         // Aquí guardaremos si es Diesel, Gasolina, etc.
-        public TipoCombustible Combustible { get; set; }
+        public Tipocombustible Combustible { get; set; }
 
         public string DniDueño { get; set; }
 
@@ -23,7 +19,7 @@ public class Vehiculo<TipoCombustible>
         public bool EstaBorrado { get; set; } = false;
     
         // ESTE ES EL CONSTRUCTOR
-        public Vehiculo(long id, string matricula, string marca, string modelo, int cilindrada, TipoCombustible combustible, string dniDueño)
+        public Vehiculo(long id, string matricula, string marca, string modelo, int cilindrada, Tipocombustible combustible, string dniDueño)
         {
                 Id = id;
                 Matricula = matricula;
@@ -38,6 +34,9 @@ public class Vehiculo<TipoCombustible>
         
 
         // Es buena práctica dejar también uno vacío por si usamos JSON más adelante
-        public Vehiculo() { }
+       
 
+        public Vehiculo() { }
 }
+
+

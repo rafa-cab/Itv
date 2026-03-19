@@ -1,21 +1,19 @@
-using Itv.Models;
-using Itv.Vehiculo;
+using System.Collections.Generic;
 
-namespace Itv.Interface;
+namespace SistemaITV;
 
 public interface IVehiculoRepository
 {
-    // Obtener todos los vehículos con paginación (para no cargar 1 millón de golpe)
+    // Listado paginado (para no saturar la memoria)
     IEnumerable<Vehiculo> ObtenerTodos(int pagina, int tamañoPagina);
-
-   
-
-    // Guardar un nuevo vehículo
-    void Guardar(Vehiculo<> vehiculo);
-
-    // Actualizar uno existente
-    void Actualizar(Vehiculo<> vehiculo);
-
-    // Borrado Lógico (solo marcarlo como borrado)
+    
+    // Buscar uno solo
+    Vehiculo? ObtenerPorId(long id);
+    
+    // Guardar y Actualizar
+    void Guardar(Vehiculo vehiculo);
+    void Actualizar(Vehiculo vehiculo);
+    
+    // Borrado Lógico (el requisito principal)
     void BorrarLogico(long id);
 }
