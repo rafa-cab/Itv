@@ -19,12 +19,12 @@ public class VehiculoRepositoryMemoria : IVehiculoRepository
         return _vehiculos
             .Where(v => !v.EstaBorrado) // <--- ¡AQUÍ ESTÁ EL BORRADO LÓGICO!
             .Skip((pagina - 1) * tamañoPagina) // Salta los de las páginas anteriores
-            .Take(tamañoPagina); // Coge solo los que caben en esta página
+            .Take(tamañoPagina);
     }
 
     public Vehiculo? ObtenerPorId(long id)
     {
-        // Buscamos el que coincida con el ID y que no esté marcado como borrado
+        
         return _vehiculos.FirstOrDefault(v => v.Id == id && !v.EstaBorrado);
     }
 
@@ -42,7 +42,7 @@ public class VehiculoRepositoryMemoria : IVehiculoRepository
         var vehiculo = _vehiculos.FirstOrDefault(v => v.Id == id);
         if (vehiculo != null)
         {
-            // NO usamos .Remove(). Simplemente le ponemos el sello de borrado.
+           
             vehiculo.EstaBorrado = true; 
         }
     }
