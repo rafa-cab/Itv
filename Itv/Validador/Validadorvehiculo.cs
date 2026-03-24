@@ -7,16 +7,14 @@ public class ValidadorVehiculo
 
     public bool EsMatriculaValida(string matricula)
     {
-        // Si la matrícula está vacía, no es válida
+        
         if (string.IsNullOrWhiteSpace(matricula)) return false;
-
-        // Comparamos la matrícula con nuestro molde
+        
         return Regex.IsMatch(matricula.ToUpper(), PatronMatricula);
     }
     
     public bool EsCilindradaValida(int cilindrada)
     {
-        // Un coche no puede tener 0 o cilindrada negativa
         return cilindrada > 0;
     }
 }

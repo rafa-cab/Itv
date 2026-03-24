@@ -19,7 +19,7 @@ public class VehiculoCache
     {
         if (!_mapa.ContainsKey(id)) return null;
 
-        // Si existe, lo movemos al principio (es el más reciente)
+        
         var nodo = _mapa[id];
         _lista.Remove(nodo);
         _lista.AddFirst(nodo);
@@ -28,5 +28,5 @@ public class VehiculoCache
     }
 
 }    
-//obtener metodo caché// 
+
 

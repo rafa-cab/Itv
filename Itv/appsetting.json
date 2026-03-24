@@ -1,0 +1,7 @@
+{
+  "ConfiguracionITV": {
+    "CacheSize": 10,
+    "BackupPath": "./backups",
+    "FormatoPorDefecto": "JSON"
+  }
+}

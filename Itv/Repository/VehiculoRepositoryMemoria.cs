@@ -17,8 +17,8 @@ public class VehiculoRepositoryMemoria : IVehiculoRepository
     public IEnumerable<Vehiculo> ObtenerTodos(int pagina, int tamañoPagina)
     {
         return _vehiculos
-            .Where(v => !v.EstaBorrado) // <--- ¡AQUÍ ESTÁ EL BORRADO LÓGICO!
-            .Skip((pagina - 1) * tamañoPagina) // Salta los de las páginas anteriores
+            .Where(v => !v.EstaBorrado)
+            .Skip((pagina - 1) * tamañoPagina) 
             .Take(tamañoPagina);
     }
 
@@ -42,7 +42,6 @@ public class VehiculoRepositoryMemoria : IVehiculoRepository
         var vehiculo = _vehiculos.FirstOrDefault(v => v.Id == id);
         if (vehiculo != null)
         {
-           
             vehiculo.EstaBorrado = true; 
         }
     }
