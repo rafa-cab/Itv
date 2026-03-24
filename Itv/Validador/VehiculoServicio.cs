@@ -14,7 +14,12 @@ public class VehiculoServicio
     }
     Public void RegistrarNuevoVehiculo(vehiculo V)
     {
-        
+        if(!validador.EsMaticulaValida(v .Matricula))
+            throw new Exception("la  matricula no valida o no cumple el formato correspondiente");
+        if (!_validador.ESCilindradaValida(v.Cilindrada))
+            throw new Exception("la cilindrada debe ser mayor a 0");
+        _repository.Guardar(v);
+        _cache.Añadir(v);
     }    
 
 }
