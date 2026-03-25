@@ -6,7 +6,7 @@ namespace SistemaITV;
 
 public class VehiculoRepositoryMemoria : IVehiculoRepository
 {
-    // Nuestra "Base de Datos" es simplemente una lista de fichas
+  
     private readonly List<Vehiculo> _vehiculos = new List<Vehiculo>();
 
     public void Guardar(Vehiculo vehiculo)
